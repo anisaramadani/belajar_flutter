@@ -12,7 +12,7 @@ class SegitagaApp extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 40, horizontal: 10),
-          child: Column(
+          child: ListView(
             children: [
               Image.asset(
                 "assets/segitiga.jpg",
