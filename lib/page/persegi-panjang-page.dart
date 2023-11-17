@@ -20,7 +20,7 @@ final PersegiPanjangController _persegiPanjangController = Get.put(PersegiPanjan
               ),
               Divider(color: Colors.white),
               Text(
-                "lingkaran",
+                "Persegi Panjang",
                 maxLines: 1,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -34,7 +34,7 @@ final PersegiPanjangController _persegiPanjangController = Get.put(PersegiPanjan
               Container(
                 width: double.infinity,
                 child: Text(
-                  "Persegi adalah salah satu bentuk geometris yang memiliki sisi-sisi yang empat dengan panjang yang sama dan memiliki keempat sudutnya sudut siku-siku. Bentuk ini memiliki sifat khusus yang membuatnya menarik dan sering digunakan dalam berbagai konteks matematika dan kehidupan sehari-hari.",
+                  "Persegi panjang adalah bangun datar dua dimensi yang dibentuk oleh dua pasang sisi yang masing-masing sama panjang dan sejajar dengan pasangannya, dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku.",
                   textAlign: TextAlign.left,
                   style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12, height: 1.5),
                 ),

@@ -35,7 +35,7 @@ class LingkaranApp extends StatelessWidget {
               Container(
                 width: double.infinity,
                 child: Text(
-                  "Persegi adalah salah satu bentuk geometris yang memiliki sisi-sisi yang empat dengan panjang yang sama dan memiliki keempat sudutnya sudut siku-siku. Bentuk ini memiliki sifat khusus yang membuatnya menarik dan sering digunakan dalam berbagai konteks matematika dan kehidupan sehari-hari.",
+                  "Lingkaran adalah bentuk yang terdiri dari semua titik dalam bidang yang berjarak tertentu dari titik tertentu, pusat; ekuivalennya adalah kurva yang dilacak oleh titik yang bergerak dalam bidang sehingga jaraknya dari titik tertentu adalah konstan. ",
                   textAlign: TextAlign.left,
                   style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12, height: 1.5),
                 ),

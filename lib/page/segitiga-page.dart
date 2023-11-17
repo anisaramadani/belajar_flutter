@@ -34,7 +34,7 @@ class SegitagaApp extends StatelessWidget {
               Container(
                 width: double.infinity,
                 child: Text(
-                  "Persegi adalah salah satu bentuk geometris yang memiliki sisi-sisi yang empat dengan panjang yang sama dan memiliki keempat sudutnya sudut siku-siku. Bentuk ini memiliki sifat khusus yang membuatnya menarik dan sering digunakan dalam berbagai konteks matematika dan kehidupan sehari-hari.",
+                  "Sebuah segitiga adalah poligon dengan tiga ujung dan tiga simpul. Ini adalah salah satu bentuk dasar dalam geometri. Segitiga dengan simpul A, B, dan C dilambangkan. Dalam geometri Euclidean, setiap tiga titik, ketika non-collinear, menentukan segitiga unik dan sekaligus, sebuah bidang unik.",
                   textAlign: TextAlign.left,
                   style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12, height: 1.5),
                 ),
