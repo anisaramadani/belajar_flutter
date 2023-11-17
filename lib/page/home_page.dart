@@ -1,5 +1,7 @@
+import 'package:bangun_datar_kelas_b/page/lingkaran-page.dart';
+import 'package:bangun_datar_kelas_b/page/persegi-page.dart';
+import 'package:bangun_datar_kelas_b/page/persegi-panjang-page.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_bottom_navigation/animated_bottom_navigation.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -22,13 +24,23 @@ class HomePage extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/persegi.jpg",title: "PERSEGI")),
-              Expanded(child: CustomMenu(imageAsset: "assets/persegi-panjang.jpg",title: "PERSEGI PANJANG")),
+              Expanded(child: InkWell(onTap: () {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiApp())); 
+              }, child: CustomMenu(imageAsset: "assets/persegi.jpg",title: "PERSEGI"))),
+              Expanded(child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiPanjangApp())); 
+                },
+                child: CustomMenu(imageAsset: "assets/persegi-panjang.jpg",title: "PERSEGI PANJANG"))),
             ],
           ),
           Row(
             children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/bulat.jpg",title: "BULAT")),
+              Expanded(child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LingkaranApp())); 
+                },
+                child: CustomMenu(imageAsset: "assets/bulat.jpg",title: "BULAT"))),
               Expanded(child: CustomMenu(imageAsset: "assets/segitiga.jpg",title: "SEGITIGA")),
             ],
           ),
@@ -43,86 +55,7 @@ class HomePage extends StatelessWidget {
             ),
           )
         ],
-      ),
-      bottomNavigationBar: AnimatedBottomNavigation(
-        context: context,
-        items: [
-          TabItem(
-            icon: const Icon(Icons.hive_sharp),
-            haveChildren: true,
-            activeColor: Colors.white,
-            inActiveColor: Colors.white60,
-            children: [
-              TabChildrenItem(
-                icon: const Icon(Icons.call),
-                title: 'Call',
-                onTap: () {},
-              ),
-              TabChildrenItem(
-                  icon: const Icon(Icons.photo_rounded),
-                  onTap: () {},
-                  title: 'Gallery'
-              ),
-              TabChildrenItem(
-                icon: const Icon(Icons.add_road),
-                onTap: () {},
-              ),
-            ],
-          ),
-          TabItem(
-            icon: const Icon(Icons.library_add),
-            haveChildren: true,
-            activeColor: Colors.white,
-            inActiveColor: Colors.white60,
-            children: [
-              TabChildrenItem(
-                icon: const Icon(Icons.add_a_photo),
-                onTap: () {},
-              ),
-              TabChildrenItem(
-                icon: const Icon(Icons.get_app),
-                onTap: () {},
-              ),
-              TabChildrenItem(
-                icon: const Icon(Icons.settings),
-                onTap: () {},
-              ),
-            ],
-          ),
-          TabItem(
-            icon: const Icon(Icons.bookmark),
-            activeColor: Colors.white,
-            inActiveColor: Colors.white60,
-          ),
-          TabItem(
-            icon: const Icon(Icons.camera_alt_rounded),
-            haveChildren: true,
-            activeColor: Colors.white,
-            inActiveColor: Colors.white60,
-            children: [
-              TabChildrenItem(
-                icon: const Icon(Icons.timer_10_select_rounded),
-                onTap: () {},
-              ),
-              TabChildrenItem(
-                icon: const Icon(Icons.phone_iphone_rounded),
-                onTap: () {},
-              ),
-              TabChildrenItem(
-                icon: const Icon(Icons.alarm),
-                onTap: () {},
-              ),
-              TabChildrenItem(
-                icon: const Icon(Icons.color_lens),
-                onTap: () {},
-              ),
-            ],
-          ),
-        ],
-        onChanged: (index) {
-          // Handle button tap
-        },
-      ),
+      )
     );
   }
 }
@@ -137,10 +70,12 @@ class CustomMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 160,
       margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       color: Colors.amberAccent,
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(imageAsset, height: 50,),
           Text(
@@ -149,12 +84,9 @@ class CustomMenu extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w900,
-              color: Colors.white70,
+              color: Colors.black,
               letterSpacing: 2,
-              fontSize: 12,
-              decorationStyle: TextDecorationStyle.solid,
-              decoration: TextDecoration.underline,
-              decorationThickness: 2,
+              fontSize: 16,
             ),
           ),
         ],
