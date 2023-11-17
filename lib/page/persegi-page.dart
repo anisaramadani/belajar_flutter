@@ -38,12 +38,12 @@ class PersegiApp extends StatelessWidget {
               Container(
                 width: double.infinity,
                 child: Text(
-                  "Persegi atau bujur sangkar adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk yang sama panjang dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku",
+                  "Persegi adalah salah satu bentuk geometris yang memiliki sisi-sisi yang empat dengan panjang yang sama dan memiliki keempat sudutnya sudut siku-siku. Bentuk ini memiliki sifat khusus yang membuatnya menarik dan sering digunakan dalam berbagai konteks matematika dan kehidupan sehari-hari.",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontWeight: FontWeight.w900),
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12, height: 1.5),
                 ),
               ),
-              Divider(color: Colors.white),
+              Divider(color: Colors.white, height: 20,),
               Container(
                 width: double.infinity,
                 child: TextFormField(
@@ -80,7 +80,7 @@ class PersegiApp extends StatelessWidget {
                       onPressed: () {
                         _persegiController.hitung();
                       },
-                      child: Text("Hitung Luas Persegi",style: TextStyle(color: Colors.brown),),
+                      child: Text("Hitung Luas Persegi",style: TextStyle(color: Colors.brown, fontWeight: FontWeight.w900),),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white70
                       ),
@@ -96,7 +96,7 @@ class PersegiApp extends StatelessWidget {
                       },
                       child: Text(
                         "Hitung Keliling Persegi",
-                        style: TextStyle(color: Colors.green),
+                        style: TextStyle(color: Colors.green, fontWeight: FontWeight.w900),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white70
@@ -106,13 +106,32 @@ class PersegiApp extends StatelessWidget {
               ]),
               Divider(
                 color: Colors.white,
+                height: 50,
               ),
-              Obx(() => Text(
-                    _persegiController.hasil.value,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: _persegiController.color.value),
-                  )),
+              Obx(() => Expanded(
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Hasil :"),
+                      Text(
+                            _persegiController.hasil.value,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: _persegiController.color.value),
+                          ),
+                          Text("======================="),
+                          Text("Thanks You"),
+                    ],
+                  ),
+                ),
+              )),
             ],
           ),
         ),
